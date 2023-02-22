@@ -1,21 +1,21 @@
 # Creates Security Group for Redis
 resource "aws_security_group" "allow_redis" {
   name        = "roboshop-${var.ENV}-redis-sg"
-  description = "Allow 27017 inbound traffic from intranet only"
+  description = "Allow 6379 inbound traffic from intranet only"
   vpc_id      = data.terraform_remote_state.vpc.outputs.VPC_ID
 
   ingress {
     description = "Allow DOCDB From Local Network"
-    from_port   = 27017
-    to_port     = 27017
+    from_port   = 6379
+    to_port     = 6379
     protocol    = "tcp"
     cidr_blocks = [data.terraform_remote_state.vpc.outputs.VPC_CIDR]   # [] represent's list. 
   }
 
   ingress {
     description = "Allow DOCDB From Default VPC Network"
-    from_port   = 27017
-    to_port     = 27017
+    from_port   = 6379
+    to_port     = 6379
     protocol    = "tcp"
     cidr_blocks = [data.terraform_remote_state.vpc.outputs.DEFAULT_VPC_CIDR]   # [] represent's list. 
   }
