@@ -17,7 +17,10 @@ resource "aws_elasticache_parameter_group" "redis-pg" {
 }
 
 # Creates Subnet Group 
-
+resource "aws_elasticache_subnet_group" "bar" {
+  name       = "tf-test-cache-subnet"
+  subnet_ids = [aws_subnet.foo.id]
+}
 
 
 # resource "aws_docdb_cluster" "docdb" {
