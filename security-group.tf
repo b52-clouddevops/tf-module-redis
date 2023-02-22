@@ -1,6 +1,6 @@
 # Creates Security Group for Redis
-resource "aws_security_group" "allow_mongodb" {
-  name        = "roboshop-${var.ENV}-mongodb-sg"
+resource "aws_security_group" "allow_redis" {
+  name        = "roboshop-${var.ENV}-redis-sg"
   description = "Allow 27017 inbound traffic from intranet only"
   vpc_id      = data.terraform_remote_state.vpc.outputs.VPC_ID
 
@@ -28,6 +28,6 @@ resource "aws_security_group" "allow_mongodb" {
   }
 
   tags = {
-    Name = "roboshop-${var.ENV}-mongodb-sg"
+    Name = "roboshop-${var.ENV}-redis-sg"
   }
 }
