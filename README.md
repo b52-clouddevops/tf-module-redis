@@ -1,3 +1,3 @@
 # tf-module-redis
 
-This is a repository which contains
+This is a repository which contains R
