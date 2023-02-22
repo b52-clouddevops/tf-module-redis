@@ -15,7 +15,7 @@ resource "aws_elasticache_cluster" "redis" {
 # Creates Parameter Group
 resource "aws_elasticache_parameter_group" "redis-pg" {
   name   = "roboshop-${var.ENV}-redis-pg"
-  family = "redis6.x"
+  family = "redis6.2"
 }
 
 # Creates Subnet Group 
