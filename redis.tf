@@ -12,9 +12,11 @@ resource "aws_elasticache_cluster" "redis" {
 
 # Creates Parameter Group
 resource "aws_elasticache_parameter_group" "redis-pg" {
-  name   = "cache-params"
-  family = "redis2.8"
+  name   = "roboshop-${var.ENV}-redis-pg"
+  family = "redis6.2"
 }
+
+
 
 # resource "aws_docdb_cluster" "docdb" {
 #   cluster_identifier      = "roboshop-${var.ENV}-docdb"
