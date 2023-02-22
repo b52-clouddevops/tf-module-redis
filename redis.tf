@@ -7,6 +7,7 @@ resource "aws_elasticache_cluster" "redis" {
   num_cache_nodes      = 1
   parameter_group_name = aws_elasticache_parameter_group.redis-pg.name
   subnet_group_name    = aws_elasticache_subnet_group.redis-sg.name
+  security_group_ids   = 
   engine_version       = "6.2"
   port                 = 6379
 }
