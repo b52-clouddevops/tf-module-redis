@@ -1,4 +1,4 @@
-# Creates Security Group
+# Creates Security Group for Redis
 resource "aws_security_group" "allow_mongodb" {
   name        = "roboshop-${var.ENV}-mongodb-sg"
   description = "Allow 27017 inbound traffic from intranet only"
