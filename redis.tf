@@ -16,6 +16,8 @@ resource "aws_elasticache_parameter_group" "redis-pg" {
   family = "redis6.2"
 }
 
+# Creates Subnet Group 
+
 
 
 # resource "aws_docdb_cluster" "docdb" {
