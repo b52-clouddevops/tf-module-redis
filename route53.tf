@@ -4,5 +4,5 @@ resource "aws_route53_record" "record" {
   name    = "redis-${var.ENV}.${data.terraform_remote_state.vpc.outputs.PRIVATE_HOSTEDZONE_NAME}"
   type    = "CNAME"
   ttl     = 10
-  records = [aws_elasticache_cluster.redis]
+  records = [aws_elasticache_cluster.redis.]
 }
