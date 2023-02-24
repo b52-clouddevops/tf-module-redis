@@ -1,4 +1,4 @@
-# Creates CNAME record for the docdb endpoint.
+# Creates CNAME record for the Redis Node endpoint.
 resource "aws_route53_record" "record" {
   zone_id = data.terraform_remote_state.vpc.outputs.PRIVATE_HOSTEDZONE_ID
   name    = "redis-${var.ENV}.${data.terraform_remote_state.vpc.outputs.PRIVATE_HOSTEDZONE_NAME}"
